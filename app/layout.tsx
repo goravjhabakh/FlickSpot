@@ -4,6 +4,8 @@ import './globals.css'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import { ClerkProvider } from '@clerk/nextjs'
 import Navbar from '@/components/Navbar'
+import Sidebar from '@/components/Sidebar'
+import { Toaster } from '@/components/ui/sonner'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -37,7 +39,7 @@ export default function RootLayout({
                   <div className='max-w-7xl mx-auto px-4'>
                     <div className='grid grid-cols-1 lg:grid-cols-12 gap-6'>
                       <div className='hidden lg:block lg:col-span-3'>
-                        sidebar
+                        <Sidebar/>
                       </div>
                       <div className='lg:col-span-9'>
                         {children}
@@ -46,6 +48,7 @@ export default function RootLayout({
                   </div>
                 </main>
               </div>
+              <Toaster />
             </ThemeProvider>
           </ClerkProvider>
         </body>
