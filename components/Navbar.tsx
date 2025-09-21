@@ -3,10 +3,11 @@ import Link from 'next/link'
 import React from 'react'
 import MobileNavbar from './MobileNavbar';
 import DesktopNavbar from './DesktopNavbar';
+import { syncUser } from '@/actions/user';
 
 const Navbar = async () => {
     const user = await currentUser();
-    //if (user) await syncUser();
+    if (user) await syncUser();
 
     return (
         <nav className='className="sticky top-0 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50"'>
