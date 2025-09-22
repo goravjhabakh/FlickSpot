@@ -9,7 +9,7 @@ const Home = async () => {
   const user = await currentUser();
   const posts = await getPosts();
   const dbUserId = await getDbUserId();
-
+  if (!dbUserId) return null;
 
   return (
     <div className='grid grid-cols-1 lg:grid-cols-10 gap-6'>

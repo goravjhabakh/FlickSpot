@@ -45,7 +45,7 @@ export const getUserByClerkId = async(clerkId: string) => {
 
 export const getDbUserId = async() => {
     const {userId} = await auth();
-    if (!userId) return null;
+    if (!userId) return;
 
     const user = await getUserByClerkId(userId);
     if (!user) throw new Error('User not found');
