@@ -43,3 +43,5 @@ next-env.d.ts
 # Custom
 responses/
 /lib/generated/prisma
+placement/
+project.md
